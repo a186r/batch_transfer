@@ -1,0 +1,1 @@
+var BatchTransfer = artifacts.require("BatchTransfer")
