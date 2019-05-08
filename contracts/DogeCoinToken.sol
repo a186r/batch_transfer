@@ -5,6 +5,9 @@ import '/openzeppelin-solidity/contracts/token/ERC20/ERC20Mintable.sol';
 import '/openzeppelin-solidity/contracts/token/ERC20/ERC20Detailed.sol';
 
 contract DogeCoinToken is ERC20, ERC20Detailed, ERC20Mintable {
+
+    event CreateTokenSuccess(address indexed owner, uint256 amount);
+
     constructor(
 
     )
@@ -14,5 +17,6 @@ contract DogeCoinToken is ERC20, ERC20Detailed, ERC20Mintable {
         ERC20()
     {
         mint(msg.sender,2000);
+        emit CreateTokenSuccess(msg.sender,balanceOf(msg.sender));
     }
 }
